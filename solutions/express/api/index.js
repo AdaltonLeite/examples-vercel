@@ -26,7 +26,7 @@ app.post("/api", (req, res) => {
 //       res.status(500);
 //     });
 
-	res.status(200)
+	res.status(200).send({status: 'ok'})
 });
 
 app.listen(PORT, () => {
