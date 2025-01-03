@@ -49,6 +49,8 @@ app.post("/api", (req, res) => {
 	  },
 	  data: data,
 	};
+
+	console.log(data)
   
 	axios
 	  .request(config)
