@@ -30,7 +30,7 @@ app.post("/api", (req, res) => {
 		  title: "title",
 		  description: "descriptions",
 		  unit_price: "10.00",
-		  id: "ABC",
+		//   id: "ABC",
 		  category_id: "category",
 		  picture_url: "https://www.mercadopago.com/img",
 		  quantity: 1,
