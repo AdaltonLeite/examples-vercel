@@ -20,7 +20,7 @@ app.post("/api", (req, res) => {
 	  description: "order description",
 	  marketplace: "NONE",
 	  marketplace_fee: "1.00",
-	  total_amount: "3.0",
+	  total_amount: "3.00",
 	  expiration_time: "P3Y6M4DT12H30M5S",
 	  type: "online",
 	  payer: { ...req.body.payer },
@@ -29,7 +29,7 @@ app.post("/api", (req, res) => {
 		{
 		  title: "title",
 		  description: "descriptions",
-		  unit_price: "3.0",
+		  unit_price: "3.00",
 		//   id: "ABC",
 		  category_id: "category",
 		  picture_url: "https://www.mercadopago.com/img",
