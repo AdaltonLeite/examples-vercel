@@ -29,7 +29,7 @@ app.post("/api", (req, res) => {
 		{
 		  title: "title",
 		  description: "descriptions",
-		  unit_price: "10.00",
+		  unit_price: "100.00",
 		//   id: "ABC",
 		  category_id: "category",
 		  picture_url: "https://www.mercadopago.com/img",
@@ -63,7 +63,7 @@ app.post("/api", (req, res) => {
 
 
 
-  
+
 app.listen(PORT, () => {
   console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
