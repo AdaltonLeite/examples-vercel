@@ -58,6 +58,7 @@ app.post("/api", (req, res) => {
 	  })
 	  .catch((error) => {
 		console.log(error)
+		console.log(error.data.errors)
 		res.status(500).send({error: true});
 	  });
   });
