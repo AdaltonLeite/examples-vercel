@@ -38,6 +38,11 @@ app.post('/api', (req, res) => {
     ],
   })
 
+  const getAT = () => {
+    if (req.body.test) return process.env.MLB_TEST_PK
+    return process.env.PK
+  }
+
   let config = {
     method: 'post',
     maxBodyLength: Infinity,
@@ -45,7 +50,7 @@ app.post('/api', (req, res) => {
     headers: {
       'Content-Type': 'application/json',
       'X-Idempotency-Key': Math.random(),
-      Authorization: `Bearer ${process.env.PK}`,
+      Authorization: `Bearer ${getAT()}`,
     },
     data: data,
   }
