@@ -57,8 +57,8 @@ app.post('/api', (req, res) => {
       res.status(response.status).send(response.data)
     })
     .catch((error) => {
-      console.log(error)
-      console.log(error.data.errors)
+      //   console.log(error)
+      console.log(JSON.stringify(error.response.data.errors))
       res
         .status(error.response.status)
         .send({ error: error?.response?.data || error?.data?.errors })
