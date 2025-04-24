@@ -39,7 +39,9 @@ app.post('/api', (req, res) => {
   })
 
   const getAT = () => {
-    if (req.body.test) return process.env.MLB_TEST_PK
+    if (req.body.test) {
+      return process.env.MLB_TEST_PK
+    }
     return process.env.PK
   }
 
