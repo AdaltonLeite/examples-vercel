@@ -66,9 +66,11 @@ app.post('/api', (req, res) => {
     .catch((error) => {
       console.log(error)
       console.log(JSON.stringify(error.response.data.errors))
-      res
-        .status(error.response.status)
-        .send({ error: error?.response?.data || error?.data?.errors })
+      console.log(error?.response?.headers['x-request-id'])
+      res.status(error.response.status).send({
+        error: error?.response?.data || error?.data?.errors,
+        requestId: error.response?.headers['x-request-id'] || 'dado errado',
+      })
     })
 })
 
