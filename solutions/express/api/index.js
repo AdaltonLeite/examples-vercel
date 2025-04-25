@@ -39,10 +39,25 @@ app.post('/api', (req, res) => {
   })
 
   const getAT = () => {
-    if (req.body.test) {
-      return process.env.MLB_TEST_PK
+    switch (site) {
+      case 'mlb':
+        if (req.body.test) {
+          return process.env.MLB_TEST_PK
+        }
+        return process.env.PK
+      case 'mla':
+        if (req.body.test) {
+          return process.env.MLA_TEST_PK
+        }
+        return process.env.MLA_PK
+      case 'mlm':
+        if (req.body.test) {
+          return process.env.MLM_TEST_PK
+        }
+        return process.env.MLM_TEST_PK
+      default:
+        return process.env.PK
     }
-    return process.env.PK
   }
 
   let config = {
