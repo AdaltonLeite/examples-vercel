@@ -39,7 +39,7 @@ app.post('/api', (req, res) => {
   })
 
   const getAT = () => {
-    switch (site) {
+    switch (req.body.site) {
       case 'mlb':
         if (req.body.test) {
           return process.env.MLB_TEST_PK
