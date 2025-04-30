@@ -60,7 +60,7 @@ app.post('/api', (req, res) => {
     }
   }
 
-  let config = {
+  let configs = {
     method: 'post',
     maxBodyLength: Infinity,
     url: 'https://api.mercadopago.com/v1/orders',
@@ -73,7 +73,7 @@ app.post('/api', (req, res) => {
   }
 
   axios
-    .request(config)
+    .request(configs)
     .then((response) => {
       console.log(response.data)
       res.status(response.status).send(response.data)
