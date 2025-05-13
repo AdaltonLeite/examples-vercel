@@ -63,7 +63,10 @@ app.post('/api', (req, res) => {
   let configs = {
     method: 'post',
     maxBodyLength: Infinity,
-    url: 'https://api.mercadopago.com/v1/orders',
+    url:
+      req.body.env === 'beta'
+        ? 'https://mp-public-order-api-beta.melioffice.com'
+        : 'https://api.mercadopago.com/v1/orders',
     headers: {
       'Content-Type': 'application/json',
       'X-Idempotency-Key': Math.random(),
